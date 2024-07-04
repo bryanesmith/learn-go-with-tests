@@ -5,7 +5,7 @@ Exercises from [Learn Go with tests](https://quii.gitbook.io/learn-go-with-tests
 ```
 % go run hello.go
 % go mod init hello
-% go test
-% go test -v
+% go test [-v]
+% go test [-v] -bench=.
 % godoc -http=localhost:8000
 ```
