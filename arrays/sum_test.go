@@ -59,6 +59,12 @@ func TestSumAllTails(t *testing.T) {
 		want := []int{5, 14}
 		assertSumAll(t, got, want)
 	})
+
+	t.Run("safely sum empty slices", func(t *testing.T) {
+		got := SumAllTails([]int{}, []int{3, 4, 5})
+		want := []int{0, 9}
+		assertSumAll(t, got, want)
+	})
 }
 
 func assertSum(t testing.TB, got, want int, input []int) {
