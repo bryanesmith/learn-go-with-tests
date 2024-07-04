@@ -9,11 +9,24 @@ func Sum(numbers []int) int {
 }
 
 func SumAll(arrays ...[]int) []int {
+
+	// Alternatively, could do this:
+	// 	lengthOfNumbers := len(numbersToSum)
+	// 	sums := make([]int, lengthOfNumbers)
+
 	var sums []int = []int{}
 
 	for _, arr := range arrays {
 		sums = append(sums, Sum(arr))
 	}
+	return sums
+}
 
+func SumAllTails(arrays ...[]int) []int {
+	var sums []int = []int{}
+	for _, arr := range arrays {
+		tail := arr[1:]
+		sums = append(sums, Sum(tail))
+	}
 	return sums
 }
